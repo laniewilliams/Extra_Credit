@@ -4,6 +4,7 @@ class ServiceQuote:
         self.__parts_charges = pcharge
         self.__labor_charges = lcharge
         
+        
        
     def set_parts_charges(self,pcharge):
         self.__parts_charges = pcharge
@@ -19,7 +20,9 @@ class ServiceQuote:
         return self.__labor_charges
 
     def get_sales_tax(self):
-        return self.__year
+        self.__sales_tax = 0.0825
+        return self.__sales_tax
 
     def get_total_charges(self):
-        return self.__year
+        self.__total_charges = (self.__parts_charges + self.__labor_charges) * self.__sales_tax
+        return self.__total_charges
