@@ -20,9 +20,11 @@ class ServiceQuote:
         return self.__labor_charges
 
     def get_sales_tax(self):
-        self.__sales_tax = 0.0825
+        tax = 0.0825
+        self.__sales_tax = (self.__parts_charges + self.__labor_charges)*tax
+
         return self.__sales_tax
 
     def get_total_charges(self):
-        self.__total_charges = (self.__parts_charges + self.__labor_charges) * self.__sales_tax
+        self.__total_charges = self.__parts_charges + self.__labor_charges + self.__sales_tax
         return self.__total_charges
