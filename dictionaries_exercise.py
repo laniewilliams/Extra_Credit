@@ -10,9 +10,7 @@ for i in words:
     words_dict[i] = count
 
 
-
-text.close()
-
-
 for key,value in words_dict.items():
     print(key,':',value)
+
+text.close()
